@@ -7,22 +7,29 @@ donde se desarrollan test de el login y la navegación básica de la web:
              saucedemo.com
 Datos: usuario: "standard_user", contraseña: "secret_sauce"            
 
-Tecnologías Requeridas
+## Tecnologias Requeridas:
 
--Python como lenguaje principal
+Python como lenguaje principal
 
--Pytest para estructura de testing
+Pytest para estructura de testing: instalar desde la terminal con el comando 
+pip install pytest-html
 
--Selenium WebDriver para automatización: 
-Desde la terminal instalar:   pip install selenium
-Para chequear la instalación: pip show selenium
+Selenium WebDriver para automatización: desde la terminal instalar 
+pip install selenium
+pip install webdriver-manager
 
--Git y GitHub para control de versiones
-
-
-
+Git y GitHub para control de versiones
 
 
-Pruebas a Ejecutar
+
+
+## Reporte en HTML
+Instalar: pip install pytest-html
+Ejecutar: pytest --html=report.html --self-contained-html
+
+--html=report.html establece el nombre del archivo
+--self-contained-html incrusta CSS y JS, de modo que el archivo funcione sin recursos externos
+
+## Pruebas a Ejecutar
 
 enlace del drive con las pruebas manuales 
