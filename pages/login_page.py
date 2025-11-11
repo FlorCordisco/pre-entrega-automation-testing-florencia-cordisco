@@ -1,17 +1,18 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time 
 
 class LoginPage:
 
     #URL
     URL = "https://www.saucedemo.com/"
 
-    _USER_INPUT = (By.ID, 'user-name')
-    _PASS_INPUT = (By.ID, 'password')
-    _LOGIN_BUTTON = (By.ID, "login-button")
+    _USER_INPUT = (By.ID,"user-name")
+    _PASS_INPUT = (By.ID,"password")
+    _LOGIN_BUTTON = (By.ID,"login-button")
 
-    def _init_(self,driver):
+    def __init__(self,driver):
        self.driver = driver 
        self.wait = WebDriverWait(driver,10)
 
@@ -38,5 +39,10 @@ class LoginPage:
     def login_completo(self,usuario,password):
         self.completar_user(usuario)
         self.completar_pass(password)
+        time.sleep(3)
         self.hacer_click_button()
         return self 
+    
+    def obtener_error(self):
+        div_error = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,".error-message-container h3")))
+        return div_error.text
