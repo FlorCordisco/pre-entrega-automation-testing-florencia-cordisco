@@ -39,7 +39,7 @@ class LoginPage:
     def login_completo(self,usuario,password):
         self.completar_user(usuario)
         self.completar_pass(password)
-        time.sleep(3)
+        time.sleep(1)
         self.hacer_click_button()
         return self 
     
